@@ -8,6 +8,8 @@
  * since some of these tests may require DOM elements. We want
  * to ensure they don't run until the DOM is ready.
  */
+
+
 $(function() {
     /* This is our first test suite - a test suite just contains
     * a related set of tests. This suite is all about the RSS
@@ -62,9 +64,10 @@ $(function() {
          * hiding/showing of the menu element.
          */
         
-//        it('is hidden by default', function() {
-//            
-//        })
+        it('is hidden by default', function() {
+
+            expect($('body').hasClass('menu-hidden')).toBe(true);
+        })
         
          /* TODO: Write a test that ensures the menu changes
           * visibility when the menu icon is clicked. This test
@@ -72,9 +75,15 @@ $(function() {
           * clicked and does it hide when clicked again.
           */
         
-//         it('changes when icon is clicked', function() {
-//            
-//        });
+         it('changes if icon is clicked', function() {
+            $menuIcon = $('.menu-icon-link')
+//            first click on menuIcon
+             $menuIcon.trigger('click')
+             expect($('body').hasClass('menu-hidden')).toBe(false);            
+//            second click on menuIcon
+             $menuIcon.trigger('click')
+             expect($('body').hasClass('menu-hidden')).toBe(true);    
+        });
         
     });
     
