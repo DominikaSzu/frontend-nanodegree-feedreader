@@ -8,12 +8,15 @@ This application is built using Google Fonts and Jasmine (Behavior Driven Develo
 
 ### What is it?
 
-This project is a web-based application that reads RSS feeds.
+This project is a web-based application that reads RSS feeds. It gives the user a possibility to display and reed different articles from:
+
+* the Udacity blog
+* the CSS-Tricks 
+* the Web Fundamentals page
+* the Linear Digressions profile on SoundCloud
 
 ### How it works?
 
+The application loads feeds using the Google Feed Reader API. Function loadFeed() will display feed entries on the page.
 
-
-19. Implement error handling for undefined variables and out-of-bound array access.
- 
-21. Write a README file detailing all steps required to successfully run the application. If you have added additional tests (for Udacious Test Coverage),  provide documentation for what these future features are and what the tests are checking for.
+There is also a hidden menu, with four categories of feeds loaded from the Google Feed Reader API.
