@@ -37,7 +37,7 @@ $(function() {
            for (const feed of allFeeds) {
                
            expect(feed.url).toBeDefined();
-           expect(feed.url).not.toBe(0);
+           expect(feed.url.length).not.toBe(0);
            }           
         });
 
@@ -48,7 +48,7 @@ $(function() {
         it('name is defined', function () {
             for (const feed of allFeeds) {
                 expect(feed.name).toBeDefined();
-                expect(feed.name).not.toBe(0);
+                expect(feed.name.length).not.toBe(0);
             }
         });
     });
@@ -95,10 +95,9 @@ $(function() {
          * function is called and completes its work, there is at least
          * a single .entry element within the .feed container.
          */
-        it('at least single .entry in .feed', function(done) {
+        it('at least single .entry in .feed', function() {
             let numOfChildren = $('.feed .entry').length;
             expect(numOfChildren).toBeGreaterThan(0);
-            done();
         });
     
     });
